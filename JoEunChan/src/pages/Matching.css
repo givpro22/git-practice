@@ -1,0 +1,342 @@
+/* ============================
+   Matching Page
+   ============================ */
+.matching {
+  padding-top: 100px;
+  padding-bottom: var(--space-3xl);
+}
+
+.matching-header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.matching-title {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 800;
+  margin-bottom: var(--space-sm);
+}
+
+.matching-subtitle {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+/* Match Cards */
+.match-cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.match-card {
+  padding: var(--space-lg);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.match-card.liked {
+  border-color: rgba(244, 114, 182, 0.3);
+}
+
+.match-card.liked::after {
+  content: '💕';
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 1.2rem;
+}
+
+/* Card Animations */
+.card-like {
+  animation: cardLike 0.5s ease forwards;
+}
+
+.card-pass {
+  animation: cardPass 0.5s ease forwards;
+}
+
+@keyframes cardLike {
+  to {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+}
+
+@keyframes cardPass {
+  to {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+}
+
+/* Card Layout */
+.match-card-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-md);
+}
+
+.match-card-left {
+  display: flex;
+  gap: var(--space-md);
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.match-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-lg);
+  background: var(--bg-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.match-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.match-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.15rem;
+}
+
+.match-uni {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.match-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.match-tag {
+  padding: 0.2rem 0.6rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+}
+
+/* Circle Score */
+.circle-score {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.circle-score-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+}
+
+.score-number {
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.score-percent {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* Reasons */
+.match-reasons-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+  margin-bottom: var(--space-md);
+}
+
+.reason-chip {
+  padding: 0.3rem 0.7rem;
+  background: rgba(129, 140, 248, 0.06);
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.expand-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.3rem 0.7rem;
+  background: transparent;
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-full);
+  color: var(--accent-purple);
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.expand-btn:hover {
+  background: rgba(129, 140, 248, 0.08);
+}
+
+/* Expanded */
+.match-expanded {
+  margin-bottom: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--border-glass);
+}
+
+.expanded-reasons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: var(--space-md);
+}
+
+.expanded-reason {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.reason-icon {
+  font-size: 1.1rem;
+}
+
+.reason-text {
+  color: var(--text-secondary);
+}
+
+.expanded-profile h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+  color: var(--text-primary);
+}
+
+.profile-details-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-bottom: var(--space-md);
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: var(--radius-sm);
+}
+
+.detail-label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.detail-value {
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.profile-bio {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-style: italic;
+  padding: 0.8rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--accent-purple);
+}
+
+/* Actions */
+.match-actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  padding-top: var(--space-sm);
+}
+
+.action-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-base);
+  border: 2px solid;
+}
+
+.pass-btn {
+  background: rgba(251, 113, 133, 0.06);
+  border-color: rgba(251, 113, 133, 0.3);
+  color: var(--accent-red);
+}
+
+.pass-btn:hover {
+  background: rgba(251, 113, 133, 0.15);
+  transform: scale(1.1);
+}
+
+.like-btn {
+  background: rgba(244, 114, 182, 0.06);
+  border-color: rgba(244, 114, 182, 0.3);
+  color: var(--accent-pink);
+}
+
+.like-btn:hover {
+  background: rgba(244, 114, 182, 0.15);
+  transform: scale(1.1);
+  box-shadow: var(--shadow-glow-pink);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .matching {
+    padding-top: 80px;
+  }
+
+  .match-card-main {
+    flex-direction: column;
+    gap: var(--space-md);
+    text-align: center;
+  }
+
+  .match-card-left {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .match-tags {
+    justify-content: center;
+  }
+
+  .match-reasons-preview {
+    justify-content: center;
+  }
+
+  .profile-details-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
