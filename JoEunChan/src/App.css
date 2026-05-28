@@ -1,0 +1,29 @@
+.app {
+  min-height: 100vh;
+  position: relative;
+}
+
+.app-main {
+  min-height: 100vh;
+}
+
+/* Background mesh gradient - always visible */
+.app::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: var(--gradient-mesh);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.app-main {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .app-main {
+    padding-bottom: 80px;
+  }
+}
