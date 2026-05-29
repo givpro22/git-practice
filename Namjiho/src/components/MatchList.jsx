@@ -45,7 +45,7 @@ export default function MatchList({ roommatesWithScores, onSelectRoommate }) {
       </div>
 
       {/* Scrollable list */}
-      <div className="app-content no-nav">
+      <div className="app-content">
         <div className="match-cards-container">
           {/* Top Rank #1 Banner */}
           {topMate && (

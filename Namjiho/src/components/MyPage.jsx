@@ -16,7 +16,7 @@ export default function MyPage({ myAnswers, onRetakeSurvey, matchHistory, roomsC
       </div>
 
       {/* Content */}
-      <div className="app-content no-nav">
+      <div className="app-content">
         {/* Profile Card */}
         <div className="mypage-profile-section">
           <div className="mypage-avatar" style={{ display: "flex", alignItems: "center", justifyContent: "center", fontSize: "36px" }}>

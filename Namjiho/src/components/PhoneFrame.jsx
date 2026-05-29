@@ -49,7 +49,9 @@ export default function PhoneFrame({ children }) {
         </div>
 
         {/* Screen Content */}
-        {children}
+        <div style={{ flex: 1, display: "flex", flexDirection: "column", minHeight: 0, position: "relative" }}>
+          {children}
+        </div>
 
         {/* Home indicator bar */}
         <div className="home-indicator-bar"></div>

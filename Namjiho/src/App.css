@@ -1213,6 +1213,7 @@
   flex-direction: column;
   background: #F8FAFC;
   height: 100%;
+  padding-bottom: 64px; /* Space for Bottom Navigation */
 }
 
 .chat-header {

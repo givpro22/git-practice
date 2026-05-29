@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 
-export default function ChatRooms({ initialRooms }) {
-  const [rooms, setRooms] = useState(initialRooms || []);
+export default function ChatRooms({ rooms, setRooms }) {
   const [activeRoomId, setActiveRoomId] = useState(null);
   const [inputText, setInputText] = useState("");
   const [isTyping, setIsTyping] = useState(false);
@@ -179,7 +178,7 @@ export default function ChatRooms({ initialRooms }) {
         </h2>
       </div>
 
-      <div className="app-content no-nav">
+      <div className="app-content">
         {rooms.length === 0 ? (
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "300px", color: "var(--phone-text-muted)", padding: "20px", textAlign: "center" }}>
             <span style={{ fontSize: "48px", marginBottom: "12px" }}>📬</span>

@@ -181,7 +181,7 @@ export default function App() {
                 <AIChatbot onUpdatePreferences={handleUpdatePreferences} />
               )}
               {tab === "messages" && (
-                <ChatRooms initialRooms={chatRooms} />
+                <ChatRooms rooms={chatRooms} setRooms={setChatRooms} />
               )}
               {tab === "mypage" && (
                 <MyPage

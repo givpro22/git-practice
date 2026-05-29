@@ -1,0 +1,10 @@
+{
+  "name": "git-practice-root",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev --prefix Namjiho",
+    "build": "npm run build --prefix Namjiho",
+    "lint": "npm run lint --prefix Namjiho",
+    "preview": "npm run preview --prefix Namjiho"
+  }
+}
